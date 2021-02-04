@@ -34,6 +34,7 @@ def main():
             time.sleep(1)
         except KeyboardInterrupt:
             print("Exiting")
+            # save state
             with open("times.txt", "w") as f:
                 for process in tracked_processes:
                     f.write(f"{process[0].strip()} {time.time() - last_time + process[1]}\n")
